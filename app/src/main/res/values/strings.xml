@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GalleryApp</string>
+    <string name="error_no_internet">It apperas you re offline. Check your internet conenction and try again...</string>
+</resources>

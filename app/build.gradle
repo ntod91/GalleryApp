@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.typeqast.galleryapp"
+        minSdk 27
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    implementation "androidx.collection:collection-ktx:1.1.0"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$view_model_scope_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_scope_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$live_data_version"
+
+
+
+    implementation project(path: ':domain')
+    implementation project(path: ':core')
+    implementation project(path: ':data')
+}
